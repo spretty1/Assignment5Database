@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IQueryable<Project>
+<!--Samantha Prettyman, section 1, group 7, this is creating a database that the program draws from and displays the info found within (books)-->
+<header>
+    <h1 class="accordion">Books</h1>
+</header>
+<!--Populates the page with the book info from the db-->
+@foreach (var x in Model)
+{
+<div class="text-center">
+    <h4 class="alert-dark">Title: @x.Title</h4>
+    <p class="alert-dismissible">Written by: @x.AuthorFirst @x.AuthorLast</p>
+    <p class="alert-heading">Publisher: @x.Publisher</p>
+    <p class="alert-baseline">@x.ISBN</p>
+    <p class="align-baseline">Classification: @x.Classification</p>
+    <p class="alert-danger">Category: @x.Category</p>
+    <p class="alert-success">$@x.Price</p>
+</div>
+}
