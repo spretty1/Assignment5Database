@@ -1,15 +1,46 @@
-﻿<!DOCTYPE html>
+﻿<style>
+    .jumbotron {
+        background-color: lightblue;
+    }
+</style>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--needed style sheets for the bootstrap-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Assignment5Database</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
-    <div class="text-center">
-        @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">BOOKS FOR SALE</span>
     </div>
+    <!--sets the background-->
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row m-1 p-1">
+                <div id="blah" class="col-4">
+                    <h1>Buy a Book</h1>
+                </div>
+                <div class="col-8">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--creates a footer using bootstrap-->
+    <footer class="py-4 bg-dark text-white-50 flex-shrink:none justify-content-around">
+        <div class="container text-center">
+            <small>Copyright &copy; BOOKS</small>
+        </div>
+    </footer>
 </body>
 </html>

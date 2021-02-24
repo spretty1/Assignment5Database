@@ -54,10 +54,12 @@ namespace Assignment5Database
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
+            {   //sets the url 
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "P{page}",
+                    new { Controller = "Home", action = "Index" });
+                endpoints.MapDefaultControllerRoute();
             });
             SeedData.EnsurePopulated(app);
         }

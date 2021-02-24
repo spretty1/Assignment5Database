@@ -19,7 +19,8 @@ namespace Assignment5Database.Migrations
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false)
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    NumPages = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
