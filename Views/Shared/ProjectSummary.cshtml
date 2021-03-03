@@ -1,0 +1,26 @@
+﻿@model Project  
+
+
+<div class="card card-outline-primary m-1 p-1">
+    <div class="bg-faded p-1">
+        <h4 class="alert-dark">Title: @Model.Title</h4>
+        <p class="alert-dismissible">Written by: @Model.AuthorFirst @Model.AuthorLast</p>
+
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Show More</button>
+        <div id="demo" class="collapse">
+            <p class="alert-heading">Publisher: @Model.Publisher</p>
+            <small><p class="alert-baseline">@Model.ISBN</p></small>
+            <p class="align-baseline">Classification: @Model.Classification</p>
+            <p class="alert-danger">Category: @Model.Category</p>
+        </div>
+
+        <span class="badge badge-pill badge-primary" style="float:right">
+            <p>$@Model.Price</p>
+        </span>
+        <div class="card-text p-1">
+            <p>Number of Pages: @Model.NumPages</p>
+        </div>
+
+    </div>
+
+</div>

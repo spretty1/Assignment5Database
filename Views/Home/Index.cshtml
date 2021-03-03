@@ -9,36 +9,15 @@
 </header>
 <!--Populates the page with the book info from the db-->
 @foreach (var x in Model.Projects)
-{
-    <div class="card card-outline-primary m-1 p-1">
-        <div class="bg-faded p-1">
-            <h4 class="alert-dark">Title: @x.Title</h4>
-            <p class="alert-dismissible">Written by: @x.AuthorFirst @x.AuthorLast</p>
-
-            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Show More</button>
-            <div id="demo" class="collapse">
-                <p class="alert-heading">Publisher: @x.Publisher</p>
-                <small><p class="alert-baseline">@x.ISBN</p></small>
-                <p class="align-baseline">Classification: @x.Classification</p>
-                <p class="alert-danger">Category: @x.Category</p>
-            </div>
-
-            <span class="badge badge-pill badge-primary" style="float:right">
-                <p>$@x.Price</p>
-            </span>
-            <div class="card-text p-1">
-                <p>Number of Pages: @x.NumPages</p>
-            </div>
-
-        </div>
-
-    </div>
+{ <!--sends to parital view to populate-->
+    <partial name="ProjectSummary" model="x" />
 }
 <!--inputs the formatting and the pagination-->
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" 
      page-class="btn" 
      page-class-normal="btn-outline-dark"
      page-class-selected="btn-primary"
+     page-url-category="@Model.CurrentCategory"
      class="btn-group pull-right m-1"
      ToolTip="Click me to go to this page">
 </div>

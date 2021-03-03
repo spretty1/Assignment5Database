@@ -9,5 +9,7 @@ namespace Assignment5Database.Models.ViewModels
     {   //sets the project list view model for the ienumerable list of projects and paging info 
         public IEnumerable<Project> Projects { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        //holds what category is currently selected
+        public string CurrentCategory { get; set; }
     }
 }

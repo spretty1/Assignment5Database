@@ -54,7 +54,20 @@ namespace Assignment5Database
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {   //sets the url 
+            { //checks to see what should be displayed based on page number and category selected, simplifies the urls 
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
+                endpoints.MapControllerRoute("category",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                //sets the url 
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P{page}",
