@@ -23,7 +23,7 @@ namespace Assignment5Database.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {   //checks to ensure the info that is needed is within the db, if so it returns the book info
             if (ModelState.IsValid)
             {
@@ -32,12 +32,12 @@ namespace Assignment5Database.Controllers
                     Projects = _repository.Projects
                                         .Where(p => category == null || p.Category == category)
                                         .OrderBy(p => p.BookId)
-                                        .Skip((page - 1) * PageSize)
+                                        .Skip((pageNum - 1) * PageSize)
                                         .Take(PageSize)
                             ,
                     PagingInfo = new PagingInfo
                     {//fixing the numbering when filtered
-                        CurrentPage = page,
+                        CurrentPage = pageNum,
                         ItemsPerPage = PageSize,
                         TotalNumItems = category == null ? _repository.Projects.Count() :
                                         _repository.Projects.Where(x => x.Category == category).Count()

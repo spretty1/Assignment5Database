@@ -32,7 +32,7 @@ namespace Assignment5Database.Infrastructure
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
-        public bool PageClassesEnabled { get; set; } = false; 
+        public bool PageClassesEnabled { get; set; } //= false; 
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
@@ -50,7 +50,7 @@ namespace Assignment5Database.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
 
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
                 //checks to see if the page is the current one 

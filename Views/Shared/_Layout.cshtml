@@ -17,11 +17,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.l.min.css" rel="stylesheet" />"
 </head>
 
 <body>
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand ml-2">BOOKS FOR SALE</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">BOOKS FOR SALE</div>
+                <div class="col-6 text-right">
+                    <!--cart displayed-->
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
     <!--sets the background-->
     <div class="jumbotron">
